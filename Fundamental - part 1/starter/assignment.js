@@ -68,34 +68,95 @@
 
 
 
-//Coding Challegne 2
+// //Coding Challegne 2
 
+// // Your tasks:
+// // 1. Print a nice output to the console, saying who has the higher BMI.The message
+// // is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+// // 2. Use a template literal to include the BMI values in the outputs.Example: "Mark's
+// // BMI(28.3) is higher than John's (23.9)!"
+// // Hint: Use an if/else statement
+
+// let weightMark = 95;
+// let heightMark = 1.88;
+// let weightJohn = 85;
+// let heightJohn = 1.76;
+
+// console.log(`Weight and Height of Mark is ${weightMark} kg and ${heightMark} meter tall.`)
+// console.log(`Weight and Height of John is ${weightJohn} kg and ${heightJohn} meter tall.`)
+
+// const BmiOfMark = weightMark / (heightMark ** 2);
+// console.log(`BMI of Mark is (${BmiOfMark}).`);
+
+// const BmiOfJohn = weightJohn / (heightJohn ** 2);
+// console.log(`BMI of John is (${BmiOfJohn}).`);
+
+
+// if (BmiOfMark > BmiOfJohn) {
+//     console.log(`Mark's BMI (${BmiOfMark}) is higher than John's (${BmiOfJohn}) `)
+// } else {
+//     console.log(`John's BMI (${BmiOfJohn}) is higher than Mark's (${BmiOfMark})`)
+// }
+
+
+
+
+
+//Coding Challegne 3
+
+// There are two gymnastics teams, Dolphins and Koalas.They compete against each
+// other 3 times.The winner with the highest average score wins a trophy!
 // Your tasks:
-// 1. Print a nice output to the console, saying who has the higher BMI.The message
-// is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
-// 2. Use a template literal to include the BMI values in the outputs.Example: "Mark's
-// BMI(28.3) is higher than John's (23.9)!"
-// Hint: Use an if/else statement
-
-let weightMark = 95;
-let heightMark = 1.88;
-let weightJohn = 85;
-let heightJohn = 1.76;
-
-console.log(`Weight and Height of Mark is ${weightMark} kg and ${heightMark} meter tall.`)
-console.log(`Weight and Height of John is ${weightJohn} kg and ${heightJohn} meter tall.`)
-
-const BmiOfMark = weightMark / (heightMark ** 2);
-console.log(`BMI of Mark is (${BmiOfMark}).`);
-
-const BmiOfJohn = weightJohn / (heightJohn ** 2);
-console.log(`BMI of John is (${BmiOfJohn}).`);
+// 1. Calculate the average score for each team, using the test data below
+// 2. Compare the team's average scores to determine the winner of the competition,
+// and print it to the console.Don't forget that there can be a draw, so test for that
+// as well(draw means they have the same average score)
+// 3. Bonus 1: Include a requirement for a minimum score of 100. With this rule, a
+// team only wins if it has a higher score than the other team, and the same time a
+// score of at least 100 points.Hint: Use a logical operator to test for minimum
+// score, as well as multiple else -if blocks
+// 4. Bonus 2: Minimum score also applies to a draw! So a draw only happens when
+// both teams have the same score and both have a score greater or equal 100
+// points.Otherwise, no team wins the trophy
+// Test data:
+// § Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+// § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+// § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 
 
-if (BmiOfMark > BmiOfJohn) {
-    console.log(`Mark's BMI (${BmiOfMark}) is higher than John's (${BmiOfJohn}) `)
+
+let matchOneDolphins = 96 + 108 + 89;
+let matchOneKoalas = 88 + 91 + 110;
+
+
+let matchTwoDolphins = 97 + 112 + 101;
+let matchTwoKoalas = 109 + 95 + 123
+
+
+let matchThreeDolphins = 97 + 112 + 101;
+let matchThreeKoalas = 109 + 95 + 106;
+
+
+let avgScoreOfDolphins = (matchOneDolphins) / 3;
+let avgScoreOfKoalas = (matchOneKoalas) / 3;
+
+console.log(`Average Score of Team Dolphins =  ${avgScoreOfDolphins} and Team Koalas = ${avgScoreOfKoalas}`)
+
+if (avgScoreOfDolphins > avgScoreOfKoalas && avgScoreOfDolphins >= 100) {
+    console.log("YaY! The Dolphins Won the Competition")
+} else if (avgScoreOfDolphins === avgScoreOfKoalas && avgScoreOfDolphins >= 100 && avgScoreOfKoalas >= 100) {
+    console.log("OOO! Its a Draw. Both Teams were Strong.")
+} else if (avgScoreOfKoalas > avgScoreOfDolphins && avgScoreOfDolphins >= 100) {
+    console.log("YaY! The Koalas Won the Competition")
 } else {
-    console.log(`John's BMI (${BmiOfJohn}) is higher than Mark's (${BmiOfMark})`)
+    console.log("No one Wins")
 }
 
 
+
+
+
+const bill = 430;
+const tip = (bill >= 50 && bill <= 300) ? bill * (15 / 100) : bill * (20 / 100);
+let finalBill = `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`;
+console.log(finalBill);
